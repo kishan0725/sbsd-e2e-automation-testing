@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="3" time="27.093">
+ <testsuite name="Login into to the application" timestamp="2020-09-02T14:35:05" hostname="localhost" time="27.093" errors="0" tests="3" skipped="0" disabled="0" failures="0">
+  <testcase classname="Login into to the application" name="Should display error message for incorrect email ID" time="19.084" />
+  <testcase classname="Login into to the application" name="Should display error message for incorrect password" time="4.377" />
+  <testcase classname="Login into to the application" name="Should be logged in successfully" time="3.628" />
+ </testsuite>
+</testsuites>
