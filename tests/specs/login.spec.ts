@@ -1,6 +1,6 @@
 import { LoginPage } from '../pages/login.po';
 import { browser, ExpectedConditions } from 'protractor';
-import { LoginCredentials } from '../../env/login.env';
+import { LoginCredentials } from '../../.env/login.env';
 
 describe('Login into to the application', async() => {
 
