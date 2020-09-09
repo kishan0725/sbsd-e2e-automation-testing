@@ -19,7 +19,8 @@
     "jasmine-spec-reporter": "^5.0.2",
     "protractor": "^7.0.0",
     "protractor-html-reporter-2": "^1.0.4",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "xlsx": "^0.16.6"
   },
   "devDependencies": {
     "ts-node": "^9.0.0"

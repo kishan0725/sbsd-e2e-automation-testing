@@ -2,22 +2,32 @@ import { LoginPage } from '../pages/login.po';
 import { browser, ExpectedConditions } from 'protractor';
 import { LoginCredentials } from '../../.env/login.env';
 
-describe('Login into to the application', async() => {
+let login: LoginPage;
 
-    let login: LoginPage;
-    
+export const loginFunction = async function (email: string, password: string) {
+    login.getUrl(); 
+    await login.getLoginButton().click();
+    await login.getEmail().sendKeys(email);
+    await login.getPassword().sendKeys(password);
+    await login.getSubmitButton().click();
+}
 
-    async function loginFunction(email: string, password: string) {
-        login.getUrl(); 
-        await login.getLoginButton().click();
-        await login.getEmail().sendKeys(email);
-        await login.getPassword().sendKeys(password);
-        await login.getSubmitButton().click();
-    }
+describe('Login into the application', async() => {
+
+    var originalTimeout: number;
 
     beforeAll(async () => {
         await browser.waitForAngularEnabled(false);
         login = new LoginPage();
+    });
+
+    beforeEach(function() {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
+    });
+
+    afterEach(function() {
+      jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     });
 
     it('Should display error message for incorrect email ID', async() => {

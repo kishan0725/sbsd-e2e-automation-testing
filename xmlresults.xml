@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="3" time="27.093">
- <testsuite name="Login into to the application" timestamp="2020-09-02T14:35:05" hostname="localhost" time="27.093" errors="0" tests="3" skipped="0" disabled="0" failures="0">
-  <testcase classname="Login into to the application" name="Should display error message for incorrect email ID" time="19.084" />
-  <testcase classname="Login into to the application" name="Should display error message for incorrect password" time="4.377" />
-  <testcase classname="Login into to the application" name="Should be logged in successfully" time="3.628" />
+<testsuites disabled="0" errors="0" failures="0" tests="8" time="153.595">
+ <testsuite name="Upload Transaction - Download Template" timestamp="2020-09-09T12:33:53" hostname="localhost" time="71.548" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Upload Transaction - Download Template" name="Should be able to download SelfReportingTemplate.xls file" time="71.543" />
+ </testsuite>
+ <testsuite name="Upload Transaction - Upload the modified excel file" timestamp="2020-09-09T12:35:05" hostname="localhost" time="82.047" errors="0" tests="7" skipped="0" disabled="0" failures="0">
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should upload the file successfully and pre-populate the data at transaction table for valid data" time="16.308" />
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should fail to upload the file for invalid Agency Code" time="10.767" />
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should append 0 at the front of the VendorTaxID if the total number of digits is less than 9" time="17.176" />
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should not let us to upload by display error message for an invalid VendorTaxID" time="1.087" />
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should fail to upload the file for empty Vendor Name" time="10.51" />
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should fail to upload the file for the Transaction Date less than July 01 2020" time="13.17" />
+  <testcase classname="Upload Transaction - Upload the modified excel file" name="Should fail to upload the file for the Transaction Date greater than current date" time="13.017" />
  </testsuite>
 </testsuites>

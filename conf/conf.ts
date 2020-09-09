@@ -4,10 +4,13 @@
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
-    '..\\tests\\specs\\login.spec.ts'
+    '..\\tests\\specs\\self-report.spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    "chromeOptions": {
+      binary: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+    }
   },
   
   directConnect: true,
@@ -61,14 +64,14 @@ fs.emptyDir('screenshots/', function (err) {
      capsPromise.then(function (caps) {
         browserName = caps.get('browserName');
         browserVersion = caps.get('version');
-        platform = caps.get('platform');
+        const platform = caps.get('platform');
  
         var HTMLReport = require('protractor-html-reporter-2');
  
-        testConfig = {
-          reportTitle: 'Protractor Test Execution Report',
+        const testConfig = {
+          reportTitle: 'SBSD Test Report',
           outputPath: './',
-          outputFilename: 'ProtractorTestReport',
+          outputFilename: 'SBSDTestReport',
           screenshotPath: './screenshots',
           testBrowser: browserName,
           browserVersion: browserVersion,
