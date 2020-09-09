@@ -178,7 +178,7 @@ describe("Upload Transaction - Upload the modified excel file", () => {
         expect(await dataManagement.getUploadErrorMessage().getText()).toBe('Vendor Tax ID should contain only number [0-9] on Row No');
         expect(await dataManagement.getUploadErrorRow().getText()).toEqual(['2']);
         dataManagement.getEditCancelButton().click();
-    })
+    });
 
     it("Should fail to upload the file for empty Vendor Name", async() => {
         openUploadTransactionPopup();
